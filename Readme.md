@@ -1,3 +1,9 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [MainWindow.xaml](./CS/CustomWorkTimeExample/MainWindow.xaml) (VB: [MainWindow.xaml.vb](./VB/CustomWorkTimeExample/MainWindow.xaml.vb))
+* [MainWindow.xaml.cs](./CS/CustomWorkTimeExample/MainWindow.xaml.cs) (VB: [MainWindow.xaml.vb](./VB/CustomWorkTimeExample/MainWindow.xaml.vb))
+<!-- default file list end -->
 # How to specify work time intervals for different days and resources
 
 
