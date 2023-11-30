@@ -10,40 +10,25 @@
     Height="600"
     mc:Ignorable="d"
     Title="MainWindow">
-    
+
     <Window.Resources>
-        <!--region #ResourceBrushSchemaCollection-->
-        <dxsch:ResourceBrushSchemaCollection x:Key="MyResourceSchemas">
-            <dxsch:ResourceBrushSchema>
-                <dxsch:ResourceBrushSchema.LightCell>
-                    <dxsch:CellBrushSchema Background="White"
-                                           DarkBorderBrush="Gray" 
-                                           LightBorderBrush="LightGray" />
-                </dxsch:ResourceBrushSchema.LightCell>
-                <dxsch:ResourceBrushSchema.DarkCell>
-                    <dxsch:CellBrushSchema Background="Gray"
-                                           DarkBorderBrush="Gray"
-                                           LightBorderBrush="Gray"/>
-                </dxsch:ResourceBrushSchema.DarkCell>
-            </dxsch:ResourceBrushSchema>
-            <dxsch:ResourceBrushSchema BaseColor="#FFF3FFE5" />
-            <dxsch:ResourceBrushSchema BaseColor="#FFE5FBFF" />
-            <dxsch:ResourceBrushSchema BaseColor="#FFFFF1E5" />
-        </dxsch:ResourceBrushSchemaCollection>
-        <!--endregion #ResourceBrushSchemaCollection-->
-        <!--region #DateHeaderFormatTemplate--> 
+        <dxsch:ColorCollection x:Key="MyResourceColors">
+            <Color>White</Color>
+            <Color>#FFF3FFE5</Color>
+            <Color>#FFE5FBFF</Color>
+            <Color>#FFFFF1E5</Color>
+        </dxsch:ColorCollection>
+        
         <DataTemplate x:Key="DateHeaderControl.ContentTemplate">
             <TextBlock Text="{Binding Interval.Start, StringFormat='ddd'}" 
                        FontSize="8"/>
         </DataTemplate>
-        <!--endregion #DateHeaderFormatTemplate-->
     </Window.Resources>
-    
+
     <Grid>
-        <!--region #SchedulerControl-->
         <dxsch:SchedulerControl CustomWorkTime="SchedulerControl_CustomWorkTime"
-            GroupType="Resource"
-            ResourceBrushSchemas="{StaticResource MyResourceSchemas}">
+                                GroupType="Resource"
+                                ResourceColors="{StaticResource MyResourceColors}">
             <dxsch:SchedulerControl.ResourceItems>
                 <dxsch:ResourceItem Caption="One" Id="1" />
                 <dxsch:ResourceItem Caption="Two" Id="2" />
@@ -51,13 +36,12 @@
                 <dxsch:ResourceItem Caption="Four" Id="4" />
             </dxsch:SchedulerControl.ResourceItems>
             <dxsch:WeekView x:Name="weekView1"
-                ResourcesPerPage="4"
-                ShowAllDayArea="False"
-                NavigationButtonsVisibility="Never"
-                DateHeaderContentTemplate="{StaticResource DateHeaderControl.ContentTemplate}"/>
+                            ResourcesPerPage="4"
+                            ShowAllDayArea="False"
+                            NavigationButtonsVisibility="Never"
+                            DateHeaderContentTemplate="{StaticResource DateHeaderControl.ContentTemplate}"/>
             <dxsch:TimelineView x:Name="timelineView1"/>
         </dxsch:SchedulerControl>
-        <!--endregion #SchedulerControl-->
     </Grid>
 
 </Window>
